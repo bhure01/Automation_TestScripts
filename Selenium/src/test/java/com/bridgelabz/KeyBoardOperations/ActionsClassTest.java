@@ -58,6 +58,7 @@ public class ActionsClassTest {
     @Test
     public void contextClick() throws InterruptedException {
         driver.get("https://www.gmail.com");
+
         driver.findElement(By.xpath("//input[@type='email']")).sendKeys("enter your username");
         driver.findElement(By.xpath("//span[.='Next']")).click();
         Thread.sleep(1000);
@@ -74,6 +75,7 @@ public class ActionsClassTest {
         //click on Archive to archive the mail
         driver.findElement(By.xpath("(//div[@class='J-N-JX aDE aDD'])[1]")).click();
     }
+
 
     @AfterMethod
     public void closeDriver() {
