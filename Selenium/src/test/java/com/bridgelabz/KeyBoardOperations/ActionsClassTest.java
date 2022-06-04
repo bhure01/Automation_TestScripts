@@ -57,25 +57,20 @@ public class ActionsClassTest {
     }
     @Test
     public void contextClick() throws InterruptedException {
-        driver.get("https://www.gmail.com");
+        driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
 
-        driver.findElement(By.xpath("//input[@type='email']")).sendKeys("enter your username");
-        driver.findElement(By.xpath("//span[.='Next']")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//input[@type='password']")).sendKeys("enter ");
-        driver.findElement(By.xpath("//span[.='Next']")).click();
-        Thread.sleep(1000);
-        String xp = "(//b[contains(.,'Following Openings (for Bangalore)')])[2]";
-        WebElement mail = driver.findElement(By.xpath(xp));
-        System.out.println(mail.getText());//Creating an object of Actions class
         Actions actions = new Actions(driver);
-        //using Actions class object and contextClick() method, right click on the mail item
-        actions.contextClick(mail).perform();
-        Thread.sleep(6000);
-        //click on Archive to archive the mail
-        driver.findElement(By.xpath("(//div[@class='J-N-JX aDE aDD'])[1]")).click();
-    }
 
+        actions.contextClick(driver.findElement(By.xpath("//span[contains(text(),'right click me')]"))).perform();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//body[1]/ul[1]/li[3]/span[1]")).click();
+        Thread.sleep(2000);
+        System.out.println(driver.switchTo().alert().getText());
+        Thread.sleep(2000);
+        driver.switchTo().alert().accept();
+        Thread.sleep(2000);
+        driver.close();
+    }
 
     @AfterMethod
     public void closeDriver() {
