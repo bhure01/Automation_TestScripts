@@ -30,7 +30,7 @@ public class IsDisplayedTest {
        //boolean b2 = driver.findElement(By.id("pass")).isDisplayed();
        //System.out.println("Password Text field is Displayed: " + b2);
         WebElement passwd = driver.findElement(By.id("pass"));
-        if (passwd.isEnabled()) {
+        if (passwd.isDisplayed()) {
             System.out.println("Password text field is displayed");
         }else {
             System.out.println("Password text field is NOT displayed");
