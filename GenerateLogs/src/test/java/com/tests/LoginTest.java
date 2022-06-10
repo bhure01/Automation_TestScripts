@@ -20,20 +20,17 @@ public class LoginTest {
     Logger log = Logger.getLogger(LoginTest.class);
 
     @BeforeMethod
-    public void setUp(){
+    public void setUp() {
         log.info("****************  Starting test cases execution  *****************");
 
-    @BeforeMethod
-    public void setUp(){
-
-        System.setProperty("webdriver.chrome.driver","/home/ubuntu/WebDrivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/ubuntu/WebDrivers/chromedriver");
         driver = new ChromeDriver();
 
         log.info("Launching the Chrome Browser");
 
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://classic.freecrm.com/");
 
         //to generate own logs
@@ -53,12 +50,13 @@ public class LoginTest {
 
         String title = driver.getTitle();
         System.out.println(title);
-        log.info("Login page title is ----->" +title);
-        Assert.assertEquals(title,"Free CRM - CRM software for customer relationship management, sales, and support.");
+        log.info("Login page title is ----->" + title);
+        Assert.assertEquals(title, "Free CRM - CRM software for customer relationship management, sales, and support.");
 
         log.info("**************** ending test case*****************");
         log.info("**************** FreeCRMTitleTest *******************");
     }
+
     @Test
     public void freeCRMLogoTest() {
         log.info("**************** starting test case *****************");
@@ -72,13 +70,7 @@ public class LoginTest {
 
         String title = driver.getTitle();
         System.out.println(title);
-        Assert.assertEquals(title,"Free CRM - CRM software for customer relationship management, sales, and support.");
-    }
-    @Test
-    public void freeCRMLogoTest() {
-        boolean logo = driver.findElement(By.xpath("//a[@class='navbar-brand']//img[@class='img-responsive']")).isDisplayed();
-        Assert.assertTrue(logo);
-
+        Assert.assertEquals(title, "Free CRM - CRM software for customer relationship management, sales, and support.");
     }
 
     @AfterMethod
@@ -89,4 +81,5 @@ public class LoginTest {
 
     }
 }
+
 
