@@ -197,4 +197,4 @@
 2022-06-10 13:54:43,396  INFO [main] LoginTest:54 - Login page title is ----->Free CRM - CRM software for customer relationship management, sales, and support.
 2022-06-10 13:54:43,397  INFO [main] LoginTest:57 - **************** ending test case*****************
 2022-06-10 13:54:43,397  INFO [main] LoginTest:58 - **************** FreeCRMTitleTest *******************
-2022-06-10 13:54:43,479  INFO [main] LoginTest:75 - **************** Browser is closed *****************
+2022-06-10 13:54:43,479  INFO [main] LoginTest:75 - **************** Browser is closed ****************
